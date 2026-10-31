@@ -7,7 +7,7 @@ export default function Header() {
     <header className="bg-deep text-cream">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <Link href="/" className="flex items-center gap-3">
-          <Image src={logo} alt="" priority className="h-16 w-auto sm:h-20" />
+          <Image src={logo} alt="" priority className="h-48 w-auto sm:h-60" />
         </Link>
         <nav className="flex items-center gap-4 text-sm sm:gap-8">
           <Link
