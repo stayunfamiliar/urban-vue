@@ -1,13 +1,16 @@
-import Link from "next/link";
 import Image from "next/image";
-import logo from "@/public/vue.png";
+import Link from "next/link";
+import logo from "@/public/vuesvg.png";
 
 export default function Header() {
   return (
-    <header className="overflow-hidden bg-deep text-cream">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
-        <Link href="/" className="block">
-          <Image src={logo} alt="Urban Vue" priority className="block h-24 w-auto -my-7 -ml-8 mix-blend-lighten sm:h-32 sm:-my-9 sm:-ml-11" />
+    <header className="bg-deep text-cream">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+        <Link href="/" className="flex items-center gap-3">
+          <Image src={logo} alt="" priority className="h-9 w-auto sm:h-10" />
+          <span className="text-xs font-medium uppercase tracking-[0.2em] sm:text-sm sm:tracking-[0.25em]">
+            Urban Vue
+          </span>
         </Link>
         <nav className="flex items-center gap-4 text-sm sm:gap-8">
           <Link
@@ -18,7 +21,7 @@ export default function Header() {
           </Link>
           <Link
             href="/landlords"
-            className="rounded-full border border-cream/40 px-5 py-2 text-cream transition-colors hover:bg-cream hover:text-ink"
+            className="rounded-full border border-cream/40 px-4 py-2 text-cream transition-colors hover:bg-cream hover:text-ink sm:px-5"
           >
             Own a property?
           </Link>
