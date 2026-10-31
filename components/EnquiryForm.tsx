@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 const inputClass =
-  "mt-1 w-full rounded-lg border border-neutral-300 px-4 py-3 text-sm outline-none focus:border-black";
+  "mt-1 w-full rounded-lg border border-ink/20 bg-cream px-4 py-3 text-sm outline-none focus:border-brand";
 
 export default function EnquiryForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
@@ -29,9 +29,9 @@ export default function EnquiryForm() {
 
   if (status === "sent") {
     return (
-      <div className="rounded-2xl border border-neutral-200 p-8">
+      <div className="rounded-2xl border border-ink/10 p-8">
         <h3 className="text-xl font-semibold">Thanks, we&apos;ve got your details</h3>
-        <p className="mt-2 text-neutral-600">
+        <p className="mt-2 text-ink/70">
           We&apos;ll be in touch shortly to arrange your free rental assessment.
         </p>
       </div>
@@ -39,7 +39,7 @@ export default function EnquiryForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5 rounded-2xl border border-neutral-200 p-8">
+    <form onSubmit={handleSubmit} className="space-y-5 rounded-2xl border border-ink/10 p-8">
       <div>
         <label htmlFor="name" className="text-sm font-medium">Full name</label>
         <input id="name" name="name" required className={inputClass} />
@@ -79,7 +79,7 @@ export default function EnquiryForm() {
       <button
         type="submit"
         disabled={status === "sending"}
-        className="w-full rounded-full bg-black px-6 py-3 font-medium text-white hover:bg-neutral-800 disabled:opacity-60"
+        className="w-full rounded-full bg-brand px-6 py-3 font-medium text-white hover:bg-deep disabled:opacity-60"
       >
         {status === "sending" ? "Sending..." : "Get my free assessment"}
       </button>

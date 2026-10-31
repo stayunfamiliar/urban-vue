@@ -51,18 +51,18 @@ export default function LandlordsPage() {
   return (
     <main>
       {/* Hero */}
-      <section className="bg-neutral-100">
+      <section className="bg-mist">
         <div className="mx-auto max-w-6xl px-6 py-20">
           <h1 className="max-w-2xl text-4xl font-semibold tracking-tight sm:text-5xl">
             Guaranteed rent for your Birmingham property
           </h1>
-          <p className="mt-4 max-w-xl text-lg text-neutral-600">
+          <p className="mt-4 max-w-xl text-lg text-ink/70">
             We lease and manage your apartment, so you get reliable income
             without the hassle.
           </p>
           <a
             href="#enquiry"
-            className="mt-8 inline-block rounded-full bg-black px-6 py-3 text-white hover:bg-neutral-800"
+            className="mt-8 inline-block rounded-full bg-brand px-6 py-3 text-white hover:bg-deep"
           >
             Get a free assessment
           </a>
@@ -75,22 +75,22 @@ export default function LandlordsPage() {
           {benefits.map((b) => (
             <div key={b.title}>
               <h2 className="text-xl font-semibold">{b.title}</h2>
-              <p className="mt-2 text-neutral-600">{b.text}</p>
+              <p className="mt-2 text-ink/70">{b.text}</p>
             </div>
           ))}
         </div>
       </section>
 
       {/* How it works */}
-      <section className="bg-neutral-100">
+      <section className="bg-mist">
         <div className="mx-auto max-w-6xl px-6 py-20">
           <h2 className="text-3xl font-semibold tracking-tight">How it works</h2>
           <ol className="mt-10 grid gap-8 sm:grid-cols-4">
             {steps.map((s, i) => (
               <li key={s.title}>
-                <span className="text-sm font-medium text-neutral-500">Step {i + 1}</span>
+                <span className="text-sm font-medium text-ink/60">Step {i + 1}</span>
                 <h3 className="mt-1 text-lg font-semibold">{s.title}</h3>
-                <p className="mt-2 text-neutral-600">{s.text}</p>
+                <p className="mt-2 text-ink/70">{s.text}</p>
               </li>
             ))}
           </ol>
@@ -100,21 +100,21 @@ export default function LandlordsPage() {
       {/* FAQ */}
       <section className="mx-auto max-w-3xl px-6 py-20">
         <h2 className="text-3xl font-semibold tracking-tight">Common questions</h2>
-        <div className="mt-8 divide-y divide-neutral-200 border-y border-neutral-200">
+        <div className="mt-8 divide-y divide-ink/10 border-y border-ink/10">
           {faqs.map((f) => (
             <details key={f.q} className="py-4">
               <summary className="cursor-pointer font-medium">{f.q}</summary>
-              <p className="mt-2 text-neutral-600">{f.a}</p>
+              <p className="mt-2 text-ink/70">{f.a}</p>
             </details>
           ))}
         </div>
       </section>
 
       {/* Enquiry form */}
-      <section id="enquiry" className="bg-neutral-100">
+      <section id="enquiry" className="bg-mist">
         <div className="mx-auto max-w-2xl px-6 py-20">
           <h2 className="text-3xl font-semibold tracking-tight">Get your free rental assessment</h2>
-          <p className="mt-2 mb-8 text-neutral-600">
+          <p className="mt-2 mb-8 text-ink/70">
             Tell us a little about your property and we&apos;ll be in touch.
           </p>
           <EnquiryForm />
