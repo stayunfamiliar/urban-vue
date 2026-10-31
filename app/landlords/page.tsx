@@ -1,4 +1,5 @@
 import EnquiryForm from "@/components/EnquiryForm";
+import { site } from "@/data/site";
 
 export const metadata = {
   title: "For landlords | Urban Vue",
@@ -60,12 +61,22 @@ export default function LandlordsPage() {
             We lease and manage your apartment, so you get reliable income
             without the hassle.
           </p>
-          <a
-            href="#enquiry"
-            className="mt-8 inline-block rounded-full bg-brand px-6 py-3 text-white transition-colors hover:bg-deep"
-          >
-            Get a free assessment
-          </a>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <a
+              href="#enquiry"
+              className="inline-block rounded-full bg-brand px-6 py-3 text-white transition-colors hover:bg-deep"
+            >
+              Get a free assessment
+            </a>
+            <a
+              href={`https://wa.me/${site.whatsappNumber}?text=${encodeURIComponent(site.whatsappMessage)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block rounded-full border border-ink/30 px-6 py-3 text-ink transition-colors hover:bg-ink hover:text-cream"
+            >
+              Message us on WhatsApp
+            </a>
+          </div>
         </div>
       </section>
 

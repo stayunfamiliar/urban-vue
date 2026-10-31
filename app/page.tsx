@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { apartments } from "@/data/apartments";
+import Reviews from "@/components/Reviews";
 
 export default function Home() {
   return (
@@ -50,6 +51,8 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      <Reviews />
 
       {/* Landlord strip */}
       <section className="bg-deep text-cream">
