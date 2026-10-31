@@ -7,10 +7,7 @@ export default function Header() {
     <header className="bg-deep text-cream">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <Link href="/" className="flex items-center gap-3">
-          <Image src={logo} alt="" priority className="h-9 w-auto sm:h-10" />
-          <span className="text-xs font-medium uppercase tracking-[0.2em] sm:text-sm sm:tracking-[0.25em]">
-            Urban Vue
-          </span>
+          <Image src={logo} alt="" priority className="h-16 w-auto sm:h-20" />
         </Link>
         <nav className="flex items-center gap-4 text-sm sm:gap-8">
           <Link
