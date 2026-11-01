@@ -85,7 +85,7 @@ export default function EnquiryForm() {
         disabled={status === "sending"}
         className="w-full rounded-full bg-brand px-8 py-3.5 font-medium text-white transition-colors hover:bg-brandlight disabled:opacity-60 sm:w-auto"
       >
-        {status === "sending" ? "Sending..." : "Send"}
+        {status === "sending" ? "Sending..." : "Get my free assessment"}
       </button>
       {status === "error" && (
         <p className="text-sm text-red-600">

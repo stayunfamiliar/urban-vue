@@ -20,10 +20,6 @@ const benefits = [
     title: "Looked after properly",
     text: "Your property is furnished, presented and maintained to a high standard.",
   },
-  {
-    title: "Professional listing",
-    text: "Your apartment is marketed with professional photos across all major platforms.",
-  },
 ];
 
 const steps = [
@@ -154,7 +150,7 @@ export default function LandlordsPage() {
             From the first viewing to the final guest checkout, our team covers
             every detail so you can sit back and collect rent.
           </p>
-          <div className="mt-14 grid gap-12 sm:grid-cols-2">
+          <div className="mt-14 grid gap-12 sm:grid-cols-2 lg:grid-cols-3">
             {benefits.map((b) => (
               <div key={b.title}>
                 <span className="flex h-10 w-10 items-center justify-center rounded-full bg-mist">
@@ -186,12 +182,8 @@ export default function LandlordsPage() {
       {/* How it works */}
       <section className="bg-cream">
         <div className="mx-auto max-w-6xl px-6 py-24 sm:py-28">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-eyebrow">
+          <h2 className="max-w-2xl font-serif text-4xl font-normal leading-[1.1] tracking-[-0.03em] text-ink sm:text-[42px]">
             How it works
-          </p>
-          <h2 className="mt-4 max-w-2xl font-serif text-4xl font-normal leading-[1.1] tracking-[-0.03em] text-ink sm:text-[42px]">
-            Getting started is{" "}
-            <em className="font-medium text-brand">simple</em>
           </h2>
           <ol className="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
             {steps.map((s, i) => (
@@ -216,8 +208,7 @@ export default function LandlordsPage() {
             Questions
           </p>
           <h2 className="mt-4 font-serif text-4xl font-normal leading-[1.1] tracking-[-0.03em] text-ink sm:text-[51px]">
-            Everything you need to{" "}
-            <em className="font-medium text-brand">know</em>
+            Common questions
           </h2>
           <div className="mt-12 divide-y divide-ink/10 border-y border-ink/10">
             {faqs.map((f) => (
@@ -243,12 +234,10 @@ export default function LandlordsPage() {
               Get in touch
             </p>
             <h2 className="mt-4 font-serif text-4xl font-normal leading-[1.1] tracking-[-0.03em] text-ink sm:text-[51px]">
-              Let&apos;s have a{" "}
-              <em className="font-medium text-brand">conversation</em>
+              Get your free rental assessment
             </h2>
             <p className="mt-5 max-w-md text-lg text-ink/60">
-              Whether you have a question or want to explore working together,
-              feel free to reach out.
+              Tell us a little about your property and we&apos;ll be in touch.
             </p>
             <div className="mt-10 space-y-6">
               <div className="flex items-start gap-4">

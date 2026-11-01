@@ -90,11 +90,8 @@ export default function Home() {
       {/* Apartments */}
       <section id="apartments" className="bg-sand">
         <div className="mx-auto max-w-6xl px-6 pb-24 sm:pb-28">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-eyebrow">
+          <h2 className="max-w-2xl font-serif text-4xl font-normal leading-[1.1] tracking-[-0.03em] text-ink sm:text-[42px]">
             Our apartments
-          </p>
-          <h2 className="mt-4 max-w-2xl font-serif text-4xl font-normal leading-[1.1] tracking-[-0.03em] text-ink sm:text-[42px]">
-            Stay in the heart of the city
           </h2>
           <p className="mt-5 max-w-xl text-lg text-ink/60">
             Two well-kept apartments, each furnished and managed to a high
