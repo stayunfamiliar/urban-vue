@@ -42,7 +42,7 @@ export default function Slider({
   }
 
   const buttonClass =
-    "absolute top-1/3 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-ink/10 bg-cream/90 text-ink shadow-sm transition-colors hover:bg-cream sm:flex";
+    "absolute top-1/3 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-ink/10 bg-white text-ink shadow-md transition-colors hover:bg-mist sm:flex";
 
   return (
     <div className="relative">

@@ -3,7 +3,9 @@
 import { useState } from "react";
 
 const inputClass =
-  "mt-1 w-full rounded-lg border border-ink/20 bg-cream px-4 py-3 text-sm outline-none focus:border-brand";
+  "w-full border-0 border-b border-ink/20 bg-transparent px-0 py-2.5 text-base text-ink outline-none transition-colors placeholder:text-ink/40 focus:border-brand";
+
+const labelClass = "text-sm font-medium text-ink";
 
 export default function EnquiryForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
@@ -29,8 +31,10 @@ export default function EnquiryForm() {
 
   if (status === "sent") {
     return (
-      <div className="rounded-2xl border border-ink/10 p-8">
-        <h3 className="text-xl font-semibold">Thanks, we&apos;ve got your details</h3>
+      <div className="rounded-[20px] bg-mist p-8">
+        <h3 className="font-serif text-2xl font-medium text-ink">
+          Thanks, we&apos;ve got your details
+        </h3>
         <p className="mt-2 text-ink/70">
           We&apos;ll be in touch shortly to arrange your free rental assessment.
         </p>
@@ -39,28 +43,28 @@ export default function EnquiryForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5 rounded-2xl border border-ink/10 p-8">
+    <form onSubmit={handleSubmit} className="space-y-6">
       <div>
-        <label htmlFor="name" className="text-sm font-medium">Full name</label>
-        <input id="name" name="name" required className={inputClass} />
+        <label htmlFor="name" className={labelClass}>Full name</label>
+        <input id="name" name="name" required placeholder="Jane Smith" className={inputClass} />
       </div>
-      <div className="grid gap-5 sm:grid-cols-2">
+      <div className="grid gap-6 sm:grid-cols-2">
         <div>
-          <label htmlFor="phone" className="text-sm font-medium">Phone</label>
-          <input id="phone" name="phone" type="tel" required className={inputClass} />
+          <label htmlFor="phone" className={labelClass}>Phone</label>
+          <input id="phone" name="phone" type="tel" required placeholder="07700 900000" className={inputClass} />
         </div>
         <div>
-          <label htmlFor="email" className="text-sm font-medium">Email</label>
-          <input id="email" name="email" type="email" required className={inputClass} />
+          <label htmlFor="email" className={labelClass}>Email</label>
+          <input id="email" name="email" type="email" required placeholder="jane@domain.com" className={inputClass} />
         </div>
       </div>
-      <div className="grid gap-5 sm:grid-cols-2">
+      <div className="grid gap-6 sm:grid-cols-2">
         <div>
-          <label htmlFor="postcode" className="text-sm font-medium">Property postcode</label>
-          <input id="postcode" name="postcode" required className={inputClass} />
+          <label htmlFor="postcode" className={labelClass}>Property postcode</label>
+          <input id="postcode" name="postcode" required placeholder="B1 1AA" className={inputClass} />
         </div>
         <div>
-          <label htmlFor="bedrooms" className="text-sm font-medium">Bedrooms</label>
+          <label htmlFor="bedrooms" className={labelClass}>Bedrooms</label>
           <select id="bedrooms" name="bedrooms" className={inputClass} defaultValue="1">
             <option value="1">1</option>
             <option value="2">2</option>
@@ -69,8 +73,8 @@ export default function EnquiryForm() {
         </div>
       </div>
       <div>
-        <label htmlFor="message" className="text-sm font-medium">Anything else we should know? (optional)</label>
-        <textarea id="message" name="message" rows={4} className={inputClass} />
+        <label htmlFor="message" className={labelClass}>Anything else we should know? (optional)</label>
+        <textarea id="message" name="message" rows={4} placeholder="How can we help you? Or describe your property..." className={inputClass} />
       </div>
 
       {/* Spam trap: real people never see or fill this in */}
@@ -79,9 +83,9 @@ export default function EnquiryForm() {
       <button
         type="submit"
         disabled={status === "sending"}
-        className="w-full rounded-full bg-brand px-6 py-3 font-medium text-white hover:bg-deep disabled:opacity-60"
+        className="w-full rounded-full bg-brand px-8 py-3.5 font-medium text-white transition-colors hover:bg-brandlight disabled:opacity-60 sm:w-auto"
       >
-        {status === "sending" ? "Sending..." : "Get my free assessment"}
+        {status === "sending" ? "Sending..." : "Send"}
       </button>
       {status === "error" && (
         <p className="text-sm text-red-600">

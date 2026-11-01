@@ -4,21 +4,32 @@ import logo from "@/public/vuesvg.png";
 
 export default function Header() {
   return (
-    <header className="bg-deep text-cream">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+    <header className="sticky top-0 z-40 border-b border-ink/5 bg-sand/90 backdrop-blur">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-2">
         <Link href="/" className="flex items-center gap-3">
-          <Image src={logo} alt="" priority className="h-16 w-auto sm:h-20" />
+          <Image
+            src={logo}
+            alt="Urban Vue"
+            priority
+            className="h-16 w-auto invert sm:h-20"
+          />
         </Link>
         <nav className="flex items-center gap-4 text-sm sm:gap-8">
           <Link
             href="/#apartments"
-            className="hidden text-cream/80 transition-colors hover:text-cream sm:inline-block"
+            className="hidden text-ink/70 transition-colors hover:text-ink sm:inline-block"
           >
             Apartments
           </Link>
           <Link
+            href="/#reviews"
+            className="hidden text-ink/70 transition-colors hover:text-ink sm:inline-block"
+          >
+            Reviews
+          </Link>
+          <Link
             href="/landlords"
-            className="rounded-full border border-cream/40 px-4 py-2 text-cream transition-colors hover:bg-cream hover:text-ink sm:px-5"
+            className="rounded-full bg-ink px-5 py-2 text-sand transition-colors hover:bg-brand"
           >
             Own a property?
           </Link>

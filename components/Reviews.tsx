@@ -10,22 +10,26 @@ export default function Reviews() {
   if (visible.length === 0) return null;
 
   return (
-    <section className="bg-sand">
+    <section id="reviews" className="bg-cream">
       <div className="mx-auto max-w-6xl px-6 py-24 sm:py-28">
-        <h2 className="text-3xl font-medium tracking-tight">What our guests say</h2>
-        <div className="mt-10">
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-eyebrow">
+          Guest reviews
+        </p>
+        <h2 className="mt-4 font-serif text-4xl font-normal leading-[1.1] tracking-[-0.03em] text-ink sm:text-[42px]">
+          What our guests <em className="font-medium text-brand">say</em>
+        </h2>
+        <div className="mt-12">
           <Slider label="Guest reviews">
             {visible.map((r, i) => (
               <figure
                 key={i}
-                className="w-[85%] shrink-0 snap-start rounded-2xl border border-ink/10 bg-cream p-8 sm:w-[calc((100%-1.5rem)/2)] lg:w-[calc((100%-3rem)/3)]"
+                className="flex w-[85%] shrink-0 snap-start flex-col justify-between rounded-[20px] bg-white p-8 shadow-sm ring-1 ring-ink/5 sm:w-[calc((100%-1.5rem)/2)] lg:w-[calc((100%-3rem)/3)]"
               >
-                <span aria-hidden="true" className="block text-5xl leading-none text-brand">
-                  &ldquo;
-                </span>
-                <blockquote className="mt-4 text-lg text-ink/80">{r.quote}</blockquote>
-                <figcaption className="mt-6 text-sm text-ink/60">
-                  {r.author} &middot; {r.source}
+                <blockquote className="font-serif text-xl italic leading-snug text-ink/80">
+                  &ldquo;{r.quote}&rdquo;
+                </blockquote>
+                <figcaption className="mt-6 text-sm text-ink/50">
+                  {r.author} · {r.source}
                 </figcaption>
               </figure>
             ))}
