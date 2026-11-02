@@ -7,12 +7,14 @@ export default function Header() {
     <header className="sticky top-0 z-40 border-b border-ink/5 bg-sand/90 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-2">
         <Link href="/" className="flex items-center gap-3">
-          <Image
-            src={logo}
-            alt="Urban Vue"
-            priority
-            className="h-16 w-auto sm:h-20"
-          />
+          <span className="relative block h-16 w-36 overflow-hidden sm:h-20 sm:w-48">
+            <Image
+              src={logo}
+              alt="Urban Vue"
+              priority
+              className="absolute left-1/2 top-1/2 h-40 w-auto -translate-x-1/2 -translate-y-1/2 sm:h-48"
+            />
+          </span>
         </Link>
         <nav className="flex items-center gap-4 text-sm sm:gap-8">
           <Link
