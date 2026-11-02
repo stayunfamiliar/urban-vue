@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { apartments } from "@/data/apartments";
 import Reviews from "@/components/Reviews";
 import Stats from "@/components/Stats";
+import ApartmentsCarousel from "@/components/ApartmentsCarousel";
 
 export default function Home() {
   return (
@@ -87,53 +87,15 @@ export default function Home() {
       {/* Apartments */}
       <section id="apartments" className="bg-sand">
         <div className="mx-auto max-w-6xl px-6 pb-24 sm:pb-28">
-          <h2 className="max-w-2xl font-serif text-4xl font-normal leading-[1.1] tracking-[-0.03em] text-ink sm:text-[42px]">
-            Our apartments
+          <h2 className="max-w-3xl font-serif text-4xl font-normal leading-[1.1] tracking-[-0.03em] text-ink sm:text-[51px]">
+            Our Apartments
           </h2>
-          <p className="mt-5 max-w-xl text-lg text-ink/60">
-            Two well-kept apartments, each furnished and managed to a high
-            standard.
+          <p className="mt-5 max-w-2xl text-lg text-ink/60">
+            Explore our collection of thoughtfully designed apartments across
+            Birmingham.
           </p>
-          <div className="mt-12 grid gap-8 sm:grid-cols-2">
-            {apartments.map((apt) => (
-              <article
-                key={apt.slug}
-                className="overflow-hidden rounded-[20px] bg-white shadow-sm ring-1 ring-ink/5"
-              >
-                <div className="aspect-[4/3] bg-gradient-to-br from-[#d8d3c8] to-[#b5ae9f]" />
-                <div className="p-8">
-                  <p className="text-sm text-ink/50">{apt.area}</p>
-                  <h3 className="mt-1 font-serif text-2xl font-medium text-ink">
-                    {apt.name}
-                  </h3>
-                  <p className="mt-1 text-sm text-ink/50">
-                    {apt.bedrooms} bed · sleeps {apt.guests}
-                  </p>
-                  <p className="mt-3 text-ink/70">{apt.description}</p>
-                  <a
-                    href={apt.airbnbUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-brand transition-colors hover:text-brandlight"
-                  >
-                    View on Airbnb
-                    <svg
-                      width="14"
-                      height="14"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      aria-hidden="true"
-                    >
-                      <path d="M5 12h14M13 6l6 6-6 6" />
-                    </svg>
-                  </a>
-                </div>
-              </article>
-            ))}
+          <div className="mt-12">
+            <ApartmentsCarousel />
           </div>
         </div>
       </section>
