@@ -1,13 +1,10 @@
-import Slider from "@/components/Slider";
 import { reviews } from "@/data/reviews";
 
 export default function Reviews() {
-  // Placeholder reviews only show while developing, never on the live site
-  const visible = reviews.filter(
-    (r) => !r.placeholder || process.env.NODE_ENV !== "production"
-  );
-
-  if (visible.length === 0) return null;
+  // The track renders the review set twice so the marquee can loop
+  // seamlessly. Temporary placeholder reviews (marked in data/reviews.ts)
+  // are shown for now while genuine guest reviews are being collected.
+  const doubled = [...reviews, ...reviews];
 
   return (
     <section id="reviews" className="bg-cream">
@@ -18,12 +15,13 @@ export default function Reviews() {
         <h2 className="mt-4 font-serif text-4xl font-normal leading-[1.1] tracking-[-0.03em] text-ink sm:text-[42px]">
           What our guests <em className="font-medium text-brand">say</em>
         </h2>
-        <div className="mt-12">
-          <Slider label="Guest reviews">
-            {visible.map((r, i) => (
+        <div className="review-track-wrap group mt-12 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:overflow-hidden">
+          <div className="animate-marquee flex w-max gap-6 pr-6">
+            {doubled.map((r, i) => (
               <figure
                 key={i}
-                className="flex w-[85%] shrink-0 snap-start flex-col justify-between rounded-[20px] bg-white p-8 shadow-sm ring-1 ring-ink/5 sm:w-[calc((100%-1.5rem)/2)] lg:w-[calc((100%-3rem)/3)]"
+                style={{ animationDelay: `${(i % reviews.length) * 0.9}s` }}
+                className="animate-float flex w-[85vw] shrink-0 flex-col justify-between rounded-[20px] bg-white p-8 shadow-sm ring-1 ring-ink/5 sm:w-[24rem]"
               >
                 <blockquote className="font-serif text-xl italic leading-snug text-ink/80">
                   &ldquo;{r.quote}&rdquo;
@@ -33,7 +31,7 @@ export default function Reviews() {
                 </figcaption>
               </figure>
             ))}
-          </Slider>
+          </div>
         </div>
       </div>
     </section>

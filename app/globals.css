@@ -22,6 +22,53 @@
   --color-deep: #0f0f0f;
   --color-ink: #2c3028;
   --color-eyebrow: #86938e;
+  --animate-marquee: marquee 48s linear infinite;
+  --animate-float: float 7s ease-in-out infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-6px);
+    }
+  }
+}
+
+/* Pause the review carousel while visitors hover over or focus it. */
+.group:hover .animate-marquee,
+.group:focus-within .animate-marquee,
+.group:hover .animate-float,
+.group:focus-within .animate-float {
+  animation-play-state: paused;
+}
+
+/* Touch devices: let visitors swipe through the reviews natively. */
+@media (hover: none) {
+  .animate-marquee {
+    animation: none;
+  }
+}
+
+/* Respect reduced-motion preferences. */
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee,
+  .animate-float {
+    animation: none;
+  }
+  .review-track-wrap {
+    overflow-x: auto;
+  }
 }
 
 body {
