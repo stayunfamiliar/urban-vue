@@ -158,7 +158,7 @@ export default function ApartmentsCarousel() {
           role="region"
           aria-label="Apartments"
           onTransitionEnd={handleTransitionEnd}
-          className={`flex w-full items-stretch gap-6 ${
+          className={`flex w-full items-stretch gap-6 pb-4 ${
             animate ? "transition-transform duration-700 ease-out" : ""
           }`}
           style={{ transform: `translateX(-${index * step}px)` }}
@@ -167,9 +167,9 @@ export default function ApartmentsCarousel() {
             <article
               key={`${apt.slug}-${i}`}
               data-card
-              className="w-[85%] shrink-0 overflow-hidden rounded-[20px] bg-white shadow-sm ring-1 ring-ink/5 sm:w-[calc((100%-6.5rem)/2)]"
+              className="w-[85%] shrink-0 rounded-[20px] bg-white shadow-sm ring-1 ring-ink/5 sm:w-[calc((100%-6.5rem)/2)]"
             >
-              <div className="aspect-[4/3] bg-gradient-to-br from-[#d8d3c8] to-[#b5ae9f]" />
+              <div className="aspect-[4/3] overflow-hidden rounded-t-[20px] bg-gradient-to-br from-[#d8d3c8] to-[#b5ae9f]" />
               <div className="p-8">
                 <p className="text-sm text-ink/50">{apt.area}</p>
                 <h3 className="mt-1 font-serif text-2xl font-medium text-ink">
