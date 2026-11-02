@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import logo from "@/public/vuesvg.png";
+import logo from "@/public/vue.png";
 
 export default function Header() {
   return (
@@ -11,7 +11,7 @@ export default function Header() {
             src={logo}
             alt="Urban Vue"
             priority
-            className="h-16 w-auto invert sm:h-20"
+            className="h-16 w-auto sm:h-20"
           />
         </Link>
         <nav className="flex items-center gap-4 text-sm sm:gap-8">
