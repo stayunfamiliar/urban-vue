@@ -10,16 +10,13 @@ export default function Home() {
       <section className="bg-cream">
         <div className="mx-auto grid max-w-6xl items-center gap-16 px-6 pb-24 pt-28 sm:pt-36 lg:grid-cols-2 lg:gap-14 lg:pb-28 lg:pt-44">
           <div className="flex flex-col items-center gap-6 text-center lg:items-start lg:text-left">
-            <span className="inline-flex items-center rounded-2xl bg-mist px-4 py-2.5 text-[10px] font-semibold text-ink">
-              Superhost · 4.9 Rating
-            </span>
             <h1 className="max-w-xl font-serif text-5xl font-normal leading-[1.1] tracking-[-0.03em] text-ink sm:text-6xl lg:text-[51px]">
-              Stylish serviced apartments in{" "}
-              <em className="font-medium text-brand">Birmingham</em>
+              Your Stay,{" "}
+              <em className="font-medium text-brand">Elevated</em>.
             </h1>
             <p className="max-w-md text-lg leading-relaxed text-ink/60">
-              Comfortable, well-kept apartments for city breaks, work trips and
-              longer stays.
+              Thoughtfully designed apartments in Birmingham, offering the
+              comfort of home with the convenience of a hotel.
             </p>
             <a
               href="#apartments"
